@@ -15,11 +15,14 @@ while is_on:
     if order_name == "report":
         print(coffee_maker.report())
         print(money_machine.report())
-    elif order_name == 'exit': """ If the choice is exit, then exit the program """
+    elif order_name == 'exit':
+        """ If the choice is exit, then exit the program """
         is_on = False
-    else: """ If the choice is drink, then get the drinks """
-        drinkname = drink_names.find_drink(order_name) """ Check if the drink is available """
+    else:
+        """ If the choice is drink, then get the drinks """
+        """ Check if the drink is available """
+        drinkname = drink_names.find_drink(order_name)
         """ If the resources are enough to make the drinks and the money is sufficient to buy it """
-        if coffee_maker.is_resource_sufficient(drinkname) and money_machine.make_payment(drinkname.cost):
+        if drinkname != "Sorry" and coffee_maker.is_resource_sufficient(drinkname) and money_machine.make_payment(drinkname.cost):
             """ Prepare the drink """
             coffee_maker.make_coffee(drinkname)
