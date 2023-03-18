@@ -7,8 +7,14 @@ import os
 question_bank = []
 
 for index in range(0, len(question_data)):
-    question = Question(question_data[index]["text"], question_data[index]["answer"])
+    question = Question(question_data[index]["question"], question_data[index]["correct_answer"])
     question_bank.append(question)
+
+# for quest in question_data:
+#     question_text = quest["question"]
+#     question_answer = quest["correct_answer"]
+#     question = Question(question_text, question_answer)
+#     question_bank.append(question)
 
 # print(question_bank)
 count = 1
